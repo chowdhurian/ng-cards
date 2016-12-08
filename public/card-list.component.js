@@ -3,17 +3,8 @@ angular
   .module('cardList')
   // register the `cardList` component
   .component('cardList', {
-    template:
-      '<p>Total cards: {{ $ctrl.cards.length }}</p>' +
-      '<ul>' +
-        '<li ng-repeat="card in $ctrl.cards">' +
-          '<h5>{{ card.firstname }}</h5>' +
-          '<p>{{ card.lastname }}</p>' +
-          '<p>{{ card.phone }}</p>' +
-          '<p>{{ card.address }}</p>' +
-          '<p>{{ card.email }}</p>' +
-        '</li>' +
-      '</ul>',
+    // the url will be relative to `index.html`
+    templateUrl: './card-list.template.html',
     controller: function CardListController() {
       this.cards = [
         {

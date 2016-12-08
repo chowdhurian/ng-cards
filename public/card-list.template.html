@@ -1,0 +1,20 @@
+<div>
+
+  <div class="">
+    <input ng-model='$ctrl.query' />
+  </div>
+
+  <div>
+    <p>Total cards: {{ $ctrl.cards.length }}. Showing: {{ 'how to calculate number of filtered results' }}</p>
+    <h5>{{ $ctrl.query }}</h5>
+    <ul>
+      <li ng-repeat='card in $ctrl.cards | filter: $ctrl.query'>
+        <h5>{{ card.firstname }}</h5>
+        <p>{{ card.lastname }}</p>
+        <p>{{ card.phone }}</p>
+        <p>{{ card.address }}</p>
+        <p>{{ card.email }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
