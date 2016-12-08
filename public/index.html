@@ -14,23 +14,18 @@
 	<!-- SCRIPTS -->
 	<script src="/angular/angular.js"></script>
   <script src="/app.js"></script>
+	<script src='/card-list.component.js'></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </head>
 
 <body ng-app='contactList'>
 
 <!-- CONTENT -->
-	<nav ng-app='contactList'>
+	<nav>
 		<div class="nav-wrapper">
 			<a href="#" class='brand-logo center'>Connect</a>
 		</div>
 	</nav>
-	<ul ng-controller='listController'>
-		<span>{{ 'human' | greet }}</span>
-		<li ng-repeat='card in cards'>
-			<span>{{ card.firstname }} </span>
-			<p>{{ card.phone }}</p>
-		</li>
-	</ul>
+	<card-list></card-list>
 </body>
 </html>

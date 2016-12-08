@@ -6,5 +6,6 @@ describe('listController', function() {
     var scope = {}
     var ctrl = $controller('listController', {$scope: scope})
     expect(scope.cards.length).toBe(3)
+    expect(scope.name).toBe('world')
   }))
 })
