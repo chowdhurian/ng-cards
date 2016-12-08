@@ -29,6 +29,7 @@ angular
           "email":"aaron.vandenbrink@gmail.com"
         }
       ]
-      this.name = 'world'
+      
+      this.orderProp = 'firstname'
     }
   })

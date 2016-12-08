@@ -1,14 +1,23 @@
 <div>
 
-  <div class="">
-    <input ng-model='$ctrl.query' />
+  <div>
+    <p>Search:</p>
+    <input ng-model='$ctrl.query'>
+  </div>
+
+  <div>
+    <p>Sort by:</p>
+    <select ng-model='$ctrl.orderProp'>
+      <option value="firstname">first name</option>
+      <option value="lastname">last name</option>
+    </select>
   </div>
 
   <div>
     <p>Total cards: {{ $ctrl.cards.length }}. Showing: {{ 'how to calculate number of filtered results' }}</p>
     <h5>{{ $ctrl.query }}</h5>
     <ul>
-      <li ng-repeat='card in $ctrl.cards | filter: $ctrl.query'>
+      <li ng-repeat='card in $ctrl.cards | filter: $ctrl.query | orderBy: $ctrl.orderProp'>
         <h5>{{ card.firstname }}</h5>
         <p>{{ card.lastname }}</p>
         <p>{{ card.phone }}</p>
@@ -17,4 +26,5 @@
       </li>
     </ul>
   </div>
+
 </div>
