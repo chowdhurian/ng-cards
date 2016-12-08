@@ -1,5 +1,7 @@
 angular
-  .module('contactList')
+// on the `cardList` module
+  .module('cardList')
+  // register the `cardList` component
   .component('cardList', {
     template:
       '<p>Total cards: {{ $ctrl.cards.length }}</p>' +
