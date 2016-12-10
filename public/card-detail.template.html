@@ -1,24 +1,30 @@
-<div class='row'>
+<div>
+  <div class='row'>
+    <div class='col s12'>
 
-  <div>
+      <div class='card-panel blue-grey darken-1'>
+        <div class='card-content white-text'>
+          <div class='center'>select a contact from the list to view</div>
+        </div>
 
-    <h5>firstname</h5>
+        <h5 class='card-content white-text'>{{ $ctrl.card[0].firstname }}</h5>
 
-    <ul>
-      <li>
-        <p>last name: </p>
-      </li>
-      <li>
-        <p>phone: </p>
-      </li>
-      <li>
-        <p>address: </p>
-      </li>
-      <li>
-        <p>email: </p>
-      </li>
-    </ul>
+        <ul class='card-content white-text'>
+          <li>
+            <p>last name: {{ $ctrl.card[0].lastname }}</p>
+          </li>
+          <li>
+            <p>phone: {{ $ctrl.card[0].phone }}</p>
+          </li>
+          <li>
+            <p>address: {{ $ctrl.card[0].address }}</p>
+          </li>
+          <li>
+            <p>email: {{ $ctrl.card[0].email }}</p>
+          </li>
+        </ul>
+      </div>
 
+    </div>
   </div>
-
 </div>

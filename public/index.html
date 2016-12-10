@@ -3,51 +3,53 @@
 <html>
 <head>
 	<!-- META -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
-	<title>Connect</title>
+	<title>Cards</title>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'>
 
-	<link rel="stylesheet" href="/app.css">
+	<link rel='stylesheet' href='/app.css'>
 
 	<!-- SCRIPTS -->
-	<script src="/angular/angular.js"></script>
+	<script src='/angular/angular.js'></script>
+	<script src='/angular-route/angular-route.js'></script>
 
-  <script src="/app.module.js"></script>
+  <script src='/app.module.js'></script>
+  <script src='/app.config.js'></script>
 
-	<script src="/card-list.module.js"></script>
+	<!-- <script src='/card-search.module.js'></script>
+	<script src='/card-search.component.js'></script> -->
+
+	<script src='/card-list.module.js'></script>
 	<script src='/card-list.component.js'></script>
 
-	<script src="/card-detail.module.js"></script>
+	<script src='/card-detail.module.js'></script>
 	<script src='/card-detail.component.js'></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js'></script>
 </head>
 
 <body ng-app='contactList'>
 	<!-- NAV -->
 	<nav>
-		<div class="nav-wrapper">
-			<a href="#" class='brand-logo center'>Connect</a>
+		<div class='nav-wrapper'>
+			<a href='#' class='brand-logo center'>Cards</a>
 		</div>
 	</nav>
 
-	<div class="row">
-		<!-- <div class="col s6"> -->
-		<div class="col s12">
+	<!-- CONTENT -->
+	<div class='row'>
+		<div class='col s6'>
 			<card-list></card-list>
 		</div>
 
-		<!-- <div class="col s6">
-			<card-detail></card-detail>
-		</div> -->
-
+		<div class='col s6'>
+			<div ng-view></div>
+		</div>
 	</div>
-	<!-- CONTENT -->
-
 
 </body>
 </html>

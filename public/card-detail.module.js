@@ -1,2 +1,4 @@
 // define the `cardDetail` module
-angular.module('cardDetail', [])
+angular.module('cardDetail', [
+  'ngRoute'
+])
