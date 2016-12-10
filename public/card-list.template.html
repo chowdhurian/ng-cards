@@ -1,21 +1,25 @@
 <div>
-
   <div class="row">
     <div class="col s12">
+
       <div class="card-panel orange accent-1">
-        <h5>Search:</h5>
-        <input ng-model='$ctrl.query'>
+        <div class="card-panel">
+          <p>Search:</p>
+          <input ng-model='$ctrl.query'>
+        </div>
+
+        <div class="card-panel">
+          <p>message:</p>
+          <form ng-submit='$ctrl.addMessage($ctrl.newMessage)'>
+            <input type="text" ng-model='$ctrl.newMessage'>
+            <button type="submit">add message</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-
-    <div class="col s6">
-
-      <div class="card-list card-panel orange accent-1">
-        <div>
-          <p>You have {{ $ctrl.cards.length }} cards!</p>
+      <div class="card-panel orange accent-1">
+        <p>You have {{ $ctrl.cards.length }} cards!</p>
+        <div class='card-panel'>
           <p>Sort by:</p>
           <select ng-model='$ctrl.orderProp'>
             <option value="firstname">first name</option>
@@ -24,33 +28,14 @@
         </div>
 
         <div>
-          <h5>{{ $ctrl.query }}</h5>
           <ul>
             <li ng-repeat='card in $ctrl.cards | filter: $ctrl.query | orderBy: $ctrl.orderProp'>
-              <p>{{ card.firstname }} {{ card.lastname }}</p>
+              <a href='#/cards/{{ card.phone }}'>{{ card.firstname }} {{ card.lastname }}</a>
             </li>
           </ul>
         </div>
       </div>
 
     </div>
-
-    <div class="col s6">
-      <div class="card-detail">
-        <div>
-          <ul>
-            <li ng-repeat='card in $ctrl.cards | filter: $ctrl.query'>
-              <h5>{{ card.firstname }}</h5>
-              <p>{{ card.lastname }}</p>
-              <p>{{ card.phone }}</p>
-              <p>{{ card.address }}</p>
-              <p>{{ card.email }}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
   </div>
-
 </div>
