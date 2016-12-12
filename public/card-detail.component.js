@@ -17,9 +17,9 @@ angular
 
         $http.get('assets/contacts.json')
           .then(function(response) {
-            ctrl.card = response.data.filter(function(card) {
+            ctrl.card = (response.data.filter(function(card) {
               return card.phone == $routeParams.cardId
-            })
+            }))[0]
           })
       }
     ]

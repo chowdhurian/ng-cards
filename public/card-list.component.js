@@ -15,6 +15,7 @@ angular
         $http.get('assets/contacts.json')
           .then(function(response) {
             ctrl.cards = response.data
+            console.log(response.data)
           })
       }
     ]
