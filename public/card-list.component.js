@@ -7,16 +7,16 @@ angular
   .component('cardList', {
     // the url will be relative to `index.html`
     templateUrl: './card-list.template.html',
-    controller: ['$http',
-      function CardListController($http, Messages) {
+    controller: ['$http', 'LoadCardsService', '$scope',
+      function CardListController($http, $rootScope, LoadCardsService) {
         var ctrl = this
         ctrl.orderProp = 'firstname'
 
-        $http.get('assets/contacts.json')
-          .then(function(response) {
-            ctrl.cards = response.data
-            console.log(response.data)
-          })
+        // $http.get('assets/contacts.json')
+        //   .then(function(response) {
+        //     ctrl.cards = response.data
+        //   })
+        $rootScope.cards = LoadCardsService.getCards()
       }
     ]
   })

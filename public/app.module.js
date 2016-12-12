@@ -9,14 +9,17 @@ angular
     // 'cardSearch',
     'cardDetail'
   ])
-  .factory('Messages', function() {
-    var messages = {}
+  .factory('LoadCardsService', function($rootScope, $http) {
+    var LoadCardsService = {}
+    LoadCardsService.data = {}
 
-    messages.list = []
+    LoadCardsService.getCards = function() {
+      $http.get('assets/contacts.json')
+        .then(function(response) {
+          LoadCardsService.data.cards = response.data
+        })
 
-    messages.add = function(message) {
-      messsages.list.push({id: messages.list.length, text: message})
+      return LoadCardsService.data
     }
-
-    return messages
+    return LoadCardsService
   })
